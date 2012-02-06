@@ -2,3 +2,6 @@ bin
 obj
 *.testsettings
 /pedamorf.vsmdi
+/PedamorfServiceSetup/Release
+/PedamorfServiceSetup/Debug
+/pedamorf.suo

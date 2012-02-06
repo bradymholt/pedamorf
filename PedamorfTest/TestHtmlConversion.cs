@@ -46,7 +46,7 @@ namespace PedamorfTest
         private void TestHtml(string html)
         {
             PdfConverter converter = new PdfConverter();
-            byte[] pdf = converter.ConvertHtml(html, new HtmlConversionOptions());
+            byte[] pdf = converter.ConvertHtml(html, new HtmlConversionOptions() { Orientation = PageOrientation.Landscape });
             Assert.IsNotNull(pdf);
             Assert.IsTrue(pdf.Length > 0);
         }
