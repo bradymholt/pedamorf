@@ -64,4 +64,5 @@ Repository Directories
 
 Requirements
 ---
-Microsoft .NET Framework 4.0
+- Windows (Windows 7, Windows 7 Service Pack 1, Windows Server 2003 Service Pack 2, Windows Server 2008, Windows Server 2008 R2, Windows Server 2008 R2 SP1, Windows Vista Service Pack 1, or Windows XP Service Pack 3)
+- Microsoft .NET Framework 4.0
