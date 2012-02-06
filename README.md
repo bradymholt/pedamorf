@@ -58,6 +58,7 @@ Repository Directories
 - **PedamorfDemo** - A ASP.NET MVC website demonstrating PDF conversion using pedamorf.
 - **PedamorfLibrary** - The core library for pedamorf.  Contains the conversion engines.
 - **PedamorfService** - Windows Service project that hosts the WCF Pedamorf Service.
+- **PedamorfTest** - Unit tests.
 - **PedamorfServiceInstaller** - Installer project referenced by the PedamorfServiceSetup project and contains installer Custom Actions used to extract zip files and configure a Windows Firewall exception during installation.
 - **PedamorfServiceSetup** - Installer project that generates the pedamorf Service MSI installer.
 
