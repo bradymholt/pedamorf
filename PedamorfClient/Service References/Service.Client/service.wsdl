@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PedamorfService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IPedamorfService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pedamorf.Library" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Pedamorf.Service" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPedamorfService_ConvertUrl_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertUrl" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertUrl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertUrls_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertUrls" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertUrls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertUrlsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertText_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertText" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertFile" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertFiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertFiles" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertFiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertImage" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertImages" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertHtml_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertHtml" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertHtml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertHtmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertHtmlList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertHtmlList" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertHtmlList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertHtmlListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_CombinePdfs_InputMessage">
+    <wsdl:part name="parameters" element="tns:CombinePdfs" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_CombinePdfs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CombinePdfsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertZipFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertZipFile" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_ConvertZipFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConvertZipFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_IsFileTypeSupported_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsFileTypeSupported" />
+  </wsdl:message>
+  <wsdl:message name="IPedamorfService_IsFileTypeSupported_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsFileTypeSupportedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPedamorfService">
+    <wsdl:operation name="ConvertUrl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertUrl" message="tns:IPedamorfService_ConvertUrl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertUrlResponse" message="tns:IPedamorfService_ConvertUrl_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertUrls">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertUrls" message="tns:IPedamorfService_ConvertUrls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertUrlsResponse" message="tns:IPedamorfService_ConvertUrls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertText" message="tns:IPedamorfService_ConvertText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertTextResponse" message="tns:IPedamorfService_ConvertText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertFile" message="tns:IPedamorfService_ConvertFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertFileResponse" message="tns:IPedamorfService_ConvertFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertFiles" message="tns:IPedamorfService_ConvertFiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertFilesResponse" message="tns:IPedamorfService_ConvertFiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertImage" message="tns:IPedamorfService_ConvertImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertImageResponse" message="tns:IPedamorfService_ConvertImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertImages" message="tns:IPedamorfService_ConvertImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertImagesResponse" message="tns:IPedamorfService_ConvertImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertHtml">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertHtml" message="tns:IPedamorfService_ConvertHtml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertHtmlResponse" message="tns:IPedamorfService_ConvertHtml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertHtmlList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertHtmlList" message="tns:IPedamorfService_ConvertHtmlList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertHtmlListResponse" message="tns:IPedamorfService_ConvertHtmlList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CombinePdfs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/CombinePdfs" message="tns:IPedamorfService_CombinePdfs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/CombinePdfsResponse" message="tns:IPedamorfService_CombinePdfs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConvertZipFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/ConvertZipFile" message="tns:IPedamorfService_ConvertZipFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/ConvertZipFileResponse" message="tns:IPedamorfService_ConvertZipFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsFileTypeSupported">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPedamorfService/IsFileTypeSupported" message="tns:IPedamorfService_IsFileTypeSupported_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPedamorfService/IsFileTypeSupportedResponse" message="tns:IPedamorfService_IsFileTypeSupported_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_IPedamorfService" type="tns:IPedamorfService">
+    <wsp:PolicyReference URI="#NetTcpBinding_IPedamorfService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="ConvertUrl">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertUrls">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertUrls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertText">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertFile">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertFiles">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertImage">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertImages">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertImages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertHtml">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertHtmlList">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertHtmlList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CombinePdfs">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/CombinePdfs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConvertZipFile">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/ConvertZipFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsFileTypeSupported">
+      <soap12:operation soapAction="http://tempuri.org/IPedamorfService/IsFileTypeSupported" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PedamorfService">
+    <wsdl:port name="NetTcpBinding_IPedamorfService" binding="tns:NetTcpBinding_IPedamorfService">
+      <soap12:address location="net.tcp://localhost:8474/Pedamorf" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:8474/Pedamorf</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

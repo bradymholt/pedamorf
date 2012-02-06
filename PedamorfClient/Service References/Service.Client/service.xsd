@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Pedamorf.Library" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Pedamorf.Service" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="ConvertUrl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q1:HtmlConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertUrlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertUrlResult" nillable="true" type="q2:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertUrls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="urls" nillable="true" type="q3:ArrayOfstring" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q4:HtmlConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertUrlsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertUrlsResult" nillable="true" type="q5:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q6:ConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertTextResult" nillable="true" type="q7:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q8:ConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertFileResult" nillable="true" type="q9:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertFiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="files" nillable="true" type="q10:ArrayOfKeyValueOfstringbase64Binary" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q11:ConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertFilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertFilesResult" nillable="true" type="q12:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertImage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="image" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q13:ImageConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertImageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertImageResult" nillable="true" type="q14:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertImages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="images" nillable="true" type="q15:ArrayOfKeyValueOfstringbase64Binary" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q16:ImageConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertImagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertImagesResult" nillable="true" type="q17:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertHtml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="html" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q18:HtmlConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertHtmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertHtmlResult" nillable="true" type="q19:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertHtmlList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="html" nillable="true" type="q20:ArrayOfstring" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q21:HtmlConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertHtmlListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertHtmlListResult" nillable="true" type="q22:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CombinePdfs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sourcePdfs" nillable="true" type="q23:ArrayOfbase64Binary" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q24:ConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CombinePdfsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="CombinePdfsResult" nillable="true" type="q25:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertZipFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="zipFile" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Pedamorf.Library" minOccurs="0" name="options" nillable="true" type="q26:ConversionOptions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConvertZipFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Pedamorf.Service" minOccurs="0" name="ConvertZipFileResult" nillable="true" type="q27:PedamorfResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsFileTypeSupported">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsFileTypeSupportedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsFileTypeSupportedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

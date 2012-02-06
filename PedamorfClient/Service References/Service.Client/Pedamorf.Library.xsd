@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pedamorf.Library" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pedamorf.Library" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="HtmlConversionOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionOptions">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HTTPAuthenticationPassword" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="HTTPAuthenticationUsername" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrintMediaType" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UserStyleSheetUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HtmlConversionOptions" nillable="true" type="tns:HtmlConversionOptions" />
+  <xs:complexType name="ConversionOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Orientation" type="tns:PageOrientation" />
+      <xs:element minOccurs="0" name="SilentFailOnUnsupportedType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TimeoutInSeconds" type="xs:int" />
+      <xs:element minOccurs="0" name="UsePlaceholderPageOnUnsupportedType" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConversionOptions" nillable="true" type="tns:ConversionOptions" />
+  <xs:simpleType name="PageOrientation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Landscape" />
+      <xs:enumeration value="Portrait" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PageOrientation" nillable="true" type="tns:PageOrientation" />
+  <xs:complexType name="ImageConversionOptions">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ConversionOptions">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImageHeight" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ImageWidth" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageConversionOptions" nillable="true" type="tns:ImageConversionOptions" />
+</xs:schema>

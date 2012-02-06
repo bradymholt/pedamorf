@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd2340af-9c4b-41e9-9bd3-e13ffc6043f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8474/Pedamorf/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="1fc52861-aadb-4112-8353-7c7015284387" SourceId="1" SourceUrl="net.tcp://localhost:8474/Pedamorf/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="66404e8b-6d1a-48d4-a3ad-d50c96b01db8" SourceId="1" SourceUrl="net.tcp://localhost:8474/Pedamorf/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c8a10ba5-45b2-405b-b522-131386d7fdce" SourceId="1" SourceUrl="net.tcp://localhost:8474/Pedamorf/mex" />
+    <MetadataFile FileName="Pedamorf.Library.xsd" MetadataType="Schema" ID="35dc2bc6-63a4-448f-a34b-c7290b50cc3c" SourceId="1" SourceUrl="net.tcp://localhost:8474/Pedamorf/mex" />
+    <MetadataFile FileName="Pedamorf.Service.xsd" MetadataType="Schema" ID="8b3d914d-c209-4110-9128-b46df23529a0" SourceId="1" SourceUrl="net.tcp://localhost:8474/Pedamorf/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="ec96c791-d7be-4774-8ad1-07cdfdd6804d" SourceId="1" SourceUrl="net.tcp://localhost:8474/Pedamorf/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

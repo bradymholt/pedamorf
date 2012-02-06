@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Pedamorf.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Pedamorf.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PedamorfResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorCode" type="tns:ErrorCodeEnum" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResultPdf" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PedamorfResponse" nillable="true" type="tns:PedamorfResponse" />
+  <xs:simpleType name="ErrorCodeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ENGINE_ERROR" />
+      <xs:enumeration value="COULD_NOT_FETCH_URL" />
+      <xs:enumeration value="UNSUPPORTED_SOURCE" />
+      <xs:enumeration value="UNSPECIFIED_ERROR" />
+      <xs:enumeration value="TIMEOUT" />
+      <xs:enumeration value="OTHER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorCodeEnum" nillable="true" type="tns:ErrorCodeEnum" />
+</xs:schema>
