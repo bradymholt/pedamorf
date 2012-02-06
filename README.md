@@ -1,7 +1,7 @@
 # pedamorf
 A Windows Service providing PDF conversion for Documents, Images, Urls, Html and Text.  
 Author: Brady Holt (http://www.GeekyTidBits.com)  
-License: LGPL
+License: LGPL (GNU LESSER GENERAL PUBLIC LICENSE) 
 
 Overview
 ---
