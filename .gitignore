@@ -1,5 +1,6 @@
 bin
 obj
+.user
 *.testsettings
 /pedamorf.vsmdi
 /PedamorfServiceSetup/Release
