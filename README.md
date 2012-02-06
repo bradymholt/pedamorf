@@ -27,7 +27,7 @@ To install and use pedamorf you need to install the Pedamorf Service and then ut
 **pedamorf Service** 
 
 1. Download the latest release from the [Downloads](https://github.com/bradyholt/PicasaWebSync/downloads) page.  
-2. Run the pedamorf Service installer (**PedamorfServiceSetup.msi**).
+2. Run the pedamorf Server installer (**PedamorfServiceSetup.msi**).
 
 **pedamorf Client**  
 
