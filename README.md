@@ -22,7 +22,7 @@ pedamorf is a server that converts documents, images, urls, html and text to PDF
 Installation
 ---
 
-To install and use pedamorf you need to install the Pedamorf Service and then utilize the Pedamorf Client to use the service.
+To install and use pedamorf you need to install the pedamorf Service and then utilize the pedamorf Client to use the service.
 
 **pedamorf Service** 
 
