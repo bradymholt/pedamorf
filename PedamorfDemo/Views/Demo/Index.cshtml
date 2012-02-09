@@ -1,34 +1,23 @@
-﻿@{
-    
-}
-<style type="text/css">
-    input[type="text"], textarea { width: 250px; }
-    #ifDemoOutput { width: 100%; height: 500px; overflow: auto; border: none; display: none; }
-    #downloadLink { display: none; }
-    #fsOutput { height: 550px; }
-    #fsOutput .centered { padding-top: 200px; width: 100%; text-align: center; }
-    #ifUpload { display: none; }
-    .pending { display: none; }
-    .output { display: none; }
-</style>
-<script type="text/javascript">
+﻿<script type="text/javascript">
     $(document).ready(function () {
         $("#ifDemoOutput").hide();
 
         $("#btnUrl").click(function () {
-            PedamorfDemo.convert("url", $("#txtUrl").val());
+            //$("#formSource").submit();
+            //PedamorfDemo.convert("url", $("#txtUrl").val());
         });
 
         $("#btnHtml").click(function () {
-            PedamorfDemo.convert("html", $("#txtHtml").val());
+            ///$("#formSource").submit();
+            //PedamorfDemo.convert("html", $("#txtHtml").val());
         });
 
         $("#btnFile").click(function () {
-            var ifUpload = $('<iframe id="ifUpload" name="ifUpload">');
-            ifUpload.load(function () { PedamorfDemo.convert("file", "true"); });
-            ifUpload.appendTo("body");
-            $("#formUploadFile").attr("target", "ifUpload");
-            $("#formUploadFile").submit();
+            //var ifUpload = $('<iframe id="ifUpload" name="ifUpload">');
+            //ifUpload.load(function () { PedamorfDemo.convert("file", "true"); });
+            //ifUpload.appendTo("body");
+            //$("#formSource").attr("target", "ifDemoOutput");
+            //$("#formSource").submit();
         });
 
         $('#ifDemoOutput').load(function () {
@@ -48,43 +37,39 @@
     }
 </script>
 <div>
+    <form action="/Demo/Convert" id="formSource" method="post" target="ifDemoOutput"
+    enctype="multipart/form-data">
     <fieldset>
         <legend>Configuration</legend>
         <div>
             <label for="txtServiceHost">
                 Service Host:</label>
-            <input type="text" id="txtServiceHost" value="localhost" />
-            <span>Make sure the service is running!</span>
+            <input type="text" id="txtServiceHost" name="txtServiceHost" value="localhost" />
+            <span><strong>Make sure the service is installed and running!</strong></span>
         </div>
     </fieldset>
     <fieldset>
         <legend>Demos</legend>
-        <div style="float: right;">
-            <label for="txtUrl">
-                Raw Html:</label>
-            <textarea id="txtHtml"><h1>My Header</h1><p>This is a test.</p></textarea>
-            <div>
-                <button id="btnHtml">
-                    Convert</button>
-            </div>
-        </div>
-        <div>
+        <div class="demoFieldContainer">
             <label for="txtUrl">
                 Url:</label>
-            <input type="text" id="txtUrl" value="http://www.google.com" />
-            <button id="btnUrl">
-                Convert</button>
+            <input type="text" id="txtUrl" name="txtUrl" value="http://www.google.com" />
+            <input type="submit" name="btnUrl" value="Convert" />
         </div>
-        <div>
+        <div class="demoFieldContainer">
+            <label for="txtUrl">
+                Raw Html:</label>
+            <textarea id="txtHtml" name="txtHtml" rows="2"><h1>My Header</h1><p>This is a test.</p></textarea>
+            <input type="submit" name="btnHtml" value="Convert" />
+        </div>
+        <div class="demoFieldContainer">
             <label>
                 Document:</label>
-            <form action="/Demo/Upload" id="formUploadFile" method="post" enctype="multipart/form-data">
             <input type="file" id="upFile" name="upFile" />
-            <button id="btnFile">
-                Convert</button>
-            </form>
+            <input type="submit" name="btnFile" value="Convert" />
         </div>
     </fieldset>
+    </form>
     <fieldset id="fsOutput">
         <legend>Output</legend>
         <div id="initial" class="centered">

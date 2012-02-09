@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using Pedamorf.Service.Client;
 
 namespace PedamorfDemo.Controllers
 {
@@ -15,17 +16,26 @@ namespace PedamorfDemo.Controllers
         }
 
         [HttpPost]
-        public void Upload(HttpPostedFileBase upFile)
+        public ActionResult Convert(string txtServiceHost, string txtUrl, HttpPostedFileBase upFile, string txtHtml, string btnUrl, string btnHtml, string btnFile)
         {
-            if (upFile.ContentLength > 0)
+            PedamorfResponse response = null;
+            using (PedamorfServiceClient client = ServiceManager.GetClient(txtServiceHost))
             {
-                using (MemoryStream ms = new MemoryStream())
+                if (!string.IsNullOrEmpty(btnUrl))
                 {
-                    upFile.InputStream.CopyTo(ms);
-                    Session["fileUploadName"] = upFile.FileName;
-                    Session["fileUploadData"] = ms.ToArray();
+                    response = client.ConvertUrl(txtHtml, new HtmlConversionOptions() { UsePlaceholderPageOnUnsupportedType = true });
+                }
+                else if (!string.IsNullOrEmpty(btnHtml))
+                {
+                    response = client.ConvertHtml(txtHtml, new HtmlConversionOptions() { UsePlaceholderPageOnUnsupportedType = true });
+                }
+                else if (!string.IsNullOrEmpty(btnHtml) && upFile.ContentLength > 0)
+                {
+                    response = client.ConvertFile(upFile.InputStream, upFile.FileName, new ConversionOptions() { UsePlaceholderPageOnUnsupportedType = true });
                 }
             }
+
+            return File(response.ResultPdf, "application/pdf");
         }
     }
 }

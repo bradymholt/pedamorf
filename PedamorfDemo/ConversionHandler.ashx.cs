@@ -7,12 +7,8 @@ using Pedamorf.Service.Client;
 
 namespace PedamorfDemo
 {
-    /// <summary>
-    /// Summary description for Handler1
-    /// </summary>
     public class ConversionHandler : IHttpHandler, IRequiresSessionState
     {
-
         public void ProcessRequest(HttpContext context)
         {
             PedamorfResponse output = null;
