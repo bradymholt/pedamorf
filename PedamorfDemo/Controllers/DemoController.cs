@@ -19,7 +19,7 @@ namespace PedamorfDemo.Controllers
         public ActionResult Convert(string txtServiceHost, string txtUrl, HttpPostedFileBase upFile, string txtHtml, string btnUrl, string btnHtml, string btnFile)
         {
             PedamorfResponse response = null;
-            using (PedamorfServiceClient client = ServiceManager.GetClient(txtServiceHost))
+            using (PedamorfServiceClient client = PedamorfServiceManager.GetClient(txtServiceHost))
             {
                 if (!string.IsNullOrEmpty(btnUrl))
                 {

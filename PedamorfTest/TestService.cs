@@ -21,14 +21,14 @@ namespace PedamorfTest
         {
             m_host = new ServiceHost(typeof(PedamorfService));
             m_host.Open();
-            m_client = ServiceManager.GetClient("localhost");
+            m_client = PedamorfServiceManager.GetClient("localhost");
         }
 
         [TestMethod]
         [ExpectedException(typeof(EndpointNotFoundException))]
         public void TestServiceUnreachable()
         {
-            PedamorfServiceClient client = ServiceManager.GetClient("bad_host");
+            PedamorfServiceClient client = PedamorfServiceManager.GetClient("bad_host");
             Pedamorf.Service.Client.PedamorfResponse response = client.ConvertHtml("<p>Test.</p>");
         }
 
@@ -36,7 +36,7 @@ namespace PedamorfTest
         [ExpectedException(typeof(EndpointNotFoundException))]
         public void TestWrongPort()
         {
-            PedamorfServiceClient client = ServiceManager.GetClient("localhost", 1000);
+            PedamorfServiceClient client = PedamorfServiceManager.GetClient("localhost", 1000);
             Pedamorf.Service.Client.PedamorfResponse response = client.ConvertHtml("<p>Test.</p>");
         }
 

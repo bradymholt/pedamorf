@@ -6,7 +6,7 @@ using System.ServiceModel;
 
 namespace Pedamorf.Service.Client
 {
-    public static class ServiceManager
+    public static class PedamorfServiceManager
     {
         private const int DEFAULT_PORT = 8474;
         private const int DEFAULT_MAX_DEPTH = 32;

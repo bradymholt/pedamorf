@@ -15,7 +15,7 @@ namespace PedamorfDemo
             string errorOutput = "Error!";
             string filename = "converted.pdf";
 
-            using (PedamorfServiceClient client = ServiceManager.GetClient(context.Request.QueryString["host"]))
+            using (PedamorfServiceClient client = PedamorfServiceManager.GetClient(context.Request.QueryString["host"]))
             {
                 if (!string.IsNullOrEmpty(context.Request.QueryString["url"]))
                 {
