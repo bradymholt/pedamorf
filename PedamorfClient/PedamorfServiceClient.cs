@@ -36,6 +36,16 @@ namespace Pedamorf.Service.Client
             return ConvertFile(file, fileName, options);
         }
 
+        public PedamorfResponse ConvertFile(Stream fileSteam1, string fileName1, Stream fileStream2, string fileName2, ConversionOptions options)
+        {
+            Dictionary<string, byte[]> files = new Dictionary<string, byte[]>();
+            byte[] file1 = GetStreamFile(fileSteam1);
+            byte[] file2 = GetStreamFile(fileSteam1);
+            files.Add(fileName1, file1);
+            files.Add(fileName2, file2);
+            return ConvertFiles(files);
+        }
+
         public PedamorfResponse ConvertFiles(string directoryPath) { return ConvertFiles(directoryPath, new ConversionOptions()); }
         public PedamorfResponse ConvertFiles(string directoryPath, ConversionOptions options)
         {

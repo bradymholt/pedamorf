@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert</title>
+    <style type="text/css">
+        body { font-size: .85em; font-family: "Trebuchet MS" , Verdana, Helvetica, Sans-Serif; }
+        .errorContainer { border: solid 1px red; background-color: #FFDDDD; color: Red; padding: 0.2em; }
+    </style>
+</head>
+<body>
+    @if (!string.IsNullOrEmpty((string)TempData["error"]))
+    {
+        <div class="errorContainer">
+            @TempData["error"]
+        </div>
+    }
+</body>
+</html>

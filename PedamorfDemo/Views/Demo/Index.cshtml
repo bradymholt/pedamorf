@@ -1,86 +1,79 @@
-﻿<script type="text/javascript">
+﻿@model Pedamorf.Demo.Models.DemoModel
+<style type="text/css">
+    #demoContainer { width: 100%; }
+    #demoInput { width: 300px; margin-right: 15px; float: left; }
+    #demoOutput { width: 1075px; }
+    #output { width: 100%; height: 500px; overflow: auto; border: none; }
+    #fsOutput { height: 550px; }
+    #fsOutput .centered { padding-top: 10px; width: 100%; text-align: center; }
+    #pending, #loading, #output { display: none; }
+    .demoFieldContainer input[type=text] { width: 250px; }
+    .demoFieldContainer input[type=submit] { width: 75px; }
+    .demoFieldContainer textarea { width: 250px; }
+</style>
+<script type="text/javascript">
     $(document).ready(function () {
-        $("#ifDemoOutput").hide();
-
-        $("#btnUrl").click(function () {
-            //$("#formSource").submit();
-            //PedamorfDemo.convert("url", $("#txtUrl").val());
+        $("input[type='submit']").click(function () {
+            $("#initial").hide();
+            $("#output").hide();
+            $("#loading").show();
         });
 
-        $("#btnHtml").click(function () {
-            ///$("#formSource").submit();
-            //PedamorfDemo.convert("html", $("#txtHtml").val());
-        });
-
-        $("#btnFile").click(function () {
-            //var ifUpload = $('<iframe id="ifUpload" name="ifUpload">');
-            //ifUpload.load(function () { PedamorfDemo.convert("file", "true"); });
-            //ifUpload.appendTo("body");
-            //$("#formSource").attr("target", "ifDemoOutput");
-            //$("#formSource").submit();
-        });
-
-        $('#ifDemoOutput').load(function () {
-            $(".pending").hide();
-            $(".output").show();
+        $("#output").load(function () {
+            $("#loading").hide();
+            $("#output").show();
         });
     });
-
-    var PedamorfDemo = {
-        convert: function (queryKey, queryValue) {
-            $("#initial").hide();
-            $(".output").hide();
-            $(".pending").show();
-            $("#ifDemoOutput").attr("src", encodeURI("ConversionHandler.ashx?host=" + $("#txtServiceHost").val() + "&" + queryKey + "=" + queryValue));
-            $("#downloadLink").attr("href", encodeURI("ConversionHandler.ashx?download=true&host=" + $("#txtServiceHost").val() + "&" + queryKey + "=" + queryValue));
-        }
-    }
 </script>
-<div>
-    <form action="/Demo/Convert" id="formSource" method="post" target="ifDemoOutput"
-    enctype="multipart/form-data">
-    <fieldset>
-        <legend>Configuration</legend>
-        <div>
-            <label for="txtServiceHost">
-                Service Host:</label>
-            <input type="text" id="txtServiceHost" name="txtServiceHost" value="localhost" />
-            <span><strong>Make sure the service is installed and running!</strong></span>
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Demos</legend>
-        <div class="demoFieldContainer">
-            <label for="txtUrl">
-                Url:</label>
-            <input type="text" id="txtUrl" name="txtUrl" value="http://www.google.com" />
-            <input type="submit" name="btnUrl" value="Convert" />
-        </div>
-        <div class="demoFieldContainer">
-            <label for="txtUrl">
-                Raw Html:</label>
-            <textarea id="txtHtml" name="txtHtml" rows="2"><h1>My Header</h1><p>This is a test.</p></textarea>
-            <input type="submit" name="btnHtml" value="Convert" />
-        </div>
-        <div class="demoFieldContainer">
-            <label>
-                Document:</label>
-            <input type="file" id="upFile" name="upFile" />
-            <input type="submit" name="btnFile" value="Convert" />
-        </div>
-    </fieldset>
-    </form>
-    <fieldset id="fsOutput">
-        <legend>Output</legend>
-        <div id="initial" class="centered">
-            (Click Convert above)
-        </div>
-        <div id="loading" class="centered pending">
-            <img src="../../Content/loader.gif" />
+<div id="demoContainer">
+    <div id="demoInput">
+        <form action="/Demo/Convert" id="formSource" method="post" target="output" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Settings</legend>
             <div>
-                Converting...</div>
-        </div>
-        <iframe id="ifDemoOutput" class="output"></iframe>
-        <a id="downloadLink" class="output">Download</a>
-    </fieldset>
+                <label for="ServiceHost">
+                    Service Host:</label>
+                <input type="text" id="ServiceHost" name="ServiceHost" value="localhost" /><br />
+                <label for="Landscape">
+                    Landscape:</label><input type="checkbox" id="Landscape" name="Landscape" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Url Demo</legend>
+            <div class="demoFieldContainer">
+                <input type="text" id="Url" name="Url" value="http://www.geekytidbits.com" />
+                <input type="submit" name="UrlButton" value="Convert" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Raw Html Demo</legend>
+            <div class="demoFieldContainer">
+                <textarea id="Html" name="Html" rows="2"><h1>My Header</h1><p>This is a test.</p></textarea>
+                <input type="submit" name="HtmlButton" value="Convert" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>File(s) Demo</legend>
+            <div class="demoFieldContainer">
+                <input type="file" id="File1" name="File1" />
+                <input type="file" id="File2" name="File2" />
+                <input type="submit" name="FileButton" value="Convert" />
+            </div>
+        </fieldset>
+        </form>
+    </div>
+    <div id="demoOutput">
+        <fieldset id="fsOutput">
+            <legend>Output</legend>
+            <div id="initial" class="centered">
+                (Click Convert)
+            </div>
+            <div id="loading" class="centered">
+                <img src="../../Content/loader.gif" />
+                <div>
+                    Converting...</div>
+            </div>
+            <iframe id="output"></iframe>
+        </fieldset>
+    </div>
 </div>

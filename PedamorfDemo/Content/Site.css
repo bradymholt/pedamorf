@@ -22,7 +22,6 @@ h5, h6 { font-size: 1em; }
 
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
-
 /* you can specify a greater or lesser percentage for the 
 page width. Or, you can specify an exact pixel width. */
 .page { width: 90%; margin-left: auto; margin-right: auto; }
@@ -34,25 +33,14 @@ footer, #footer { background-color: #fff; color: #999; padding: 10px 0; text-ali
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
-fieldset { border: 1px solid #ddd; padding: 0 1.4em 1.4em 1.4em; margin: 0 0 1.5em 0; }
-legend { font-size: 1.2em; font-weight: bold; }
+fieldset { border: 1px solid #ddd; padding: 0 1.4em 1.4em 1.4em; margin: 0 0 .5em 0; }
+legend { font-size: 1.2em; font-weight: bold; padding-bottom:0.5em; }
 textarea { min-height: 75px; }
-input[type="text"], input[type="password"], textarea { border: 1px solid #ccc; padding: 2px; font-size: 1.2em; color: #444; width: 200px; }
+input[type="text"], input[type="password"], textarea { border: 1px solid #ccc; color: #444; width: 200px; }
 textarea { font-family: Trebuchet MS, Verdana, Helvetica, Sans-Serif; }
 label { display: block; width: 100px; float: left; }
 select { border: 1px solid #ccc; padding: 2px; font-size: 1.2em; color: #444; }
-input[type="submit"] { font-size: 1.2em; padding: 5px; }
+input[type="submit"] { }
 button { background-color: #5c87b2; color: White; border: solid 1px lightgray; padding: 3px; }
 
 
-input[type="text"], textarea { width: 250px; }
-#ifDemoOutput { width: 100%; height: 500px; overflow: auto; border: none; display: none; }
-#downloadLink { display: none; }
-#fsOutput { height: 550px; }
-#fsOutput .centered { padding-top: 10px; width: 100%; text-align: center; }
-#ifUpload { display: none; }
-.pending { display: none; }
-.output { display: none; }
-.demoFieldContainer input, .demoFieldContainer textarea { width: 400px; margin-right: 15px; }
-.demoFieldContainer #upFile { width: 405px; }
-#txtServiceHost { width: 150px; margin-right: 15px; }
