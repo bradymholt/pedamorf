@@ -1,6 +1,6 @@
 # pedamorf
 A PDF conversion server for Windows that supports documents, images, urls, html and text.  
-Author: Brady Holt (http://www.GeekyTidBits.com)  
+Author: Brady Holt (http://www.geekytidbits.com)  
 License: LGPL (GNU LESSER GENERAL PUBLIC LICENSE) 
 
 Overview
