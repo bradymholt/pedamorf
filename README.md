@@ -36,7 +36,7 @@ Basic usage:
         
         using Pedamorf.Service.Client;
         ... 
-        using (PedamorfServiceClient client = ServiceManager.GetClient("Server_Name"))
+        using (PedamorfServiceClient client = PedamorfServiceManager.GetClient("Server_Name"))
         {
            PedamorfResponse response = client.ConvertFile("C:\\document.doc");
            File.WriteAllBytes("C:\output.pdf",response.ResultPdf);
