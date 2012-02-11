@@ -60,7 +60,7 @@ of what you can do.  The demo looks like this:
 
 Under the Hood
 ---
-The pedamorf Service runs as a Windows Service and leverages a TCP binary binding through WCF for service communication.  
+The pedamorf Service is implemented as a Windows Service and leverages a TCP binary binding in WCF for service communication.  
 
 Repository Directories
 ---
