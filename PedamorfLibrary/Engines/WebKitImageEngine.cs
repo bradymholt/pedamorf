@@ -31,15 +31,15 @@ namespace Pedamorf.Library
                 {
                     ImageConversionOptions imageOptions = (ImageConversionOptions)options;
 
-                    if (imageOptions.ImageWidth.HasValue)
+                    if (imageOptions.ImageWidthPixelsMin.HasValue)
                     {
-                        widthAttribute = string.Format("width='{0}'", imageOptions.ImageWidth.Value);
+                        widthAttribute = string.Format("width='{0}'", imageOptions.ImageWidthPixelsMin.Value);
                     }
 
 
-                    if (imageOptions.ImageHeight.HasValue)
+                    if (imageOptions.ImageHeightPixelsMin.HasValue)
                     {
-                        heightAttribute = string.Format("width='{0}'", imageOptions.ImageHeight.Value);
+                        heightAttribute = string.Format("width='{0}'", imageOptions.ImageHeightPixelsMin.Value);
                     }
                 }
 

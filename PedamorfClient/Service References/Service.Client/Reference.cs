@@ -115,33 +115,33 @@ namespace Pedamorf.Service.Client {
     public partial class ImageConversionOptions : Pedamorf.Service.Client.ConversionOptions {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ImageHeightField;
+        private System.Nullable<int> ImageHeightPixelsMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> ImageWidthField;
+        private System.Nullable<int> ImageWidthPixelsMinField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ImageHeight {
+        public System.Nullable<int> ImageHeightPixelsMin {
             get {
-                return this.ImageHeightField;
+                return this.ImageHeightPixelsMinField;
             }
             set {
-                if ((this.ImageHeightField.Equals(value) != true)) {
-                    this.ImageHeightField = value;
-                    this.RaisePropertyChanged("ImageHeight");
+                if ((this.ImageHeightPixelsMinField.Equals(value) != true)) {
+                    this.ImageHeightPixelsMinField = value;
+                    this.RaisePropertyChanged("ImageHeightPixelsMin");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> ImageWidth {
+        public System.Nullable<int> ImageWidthPixelsMin {
             get {
-                return this.ImageWidthField;
+                return this.ImageWidthPixelsMinField;
             }
             set {
-                if ((this.ImageWidthField.Equals(value) != true)) {
-                    this.ImageWidthField = value;
-                    this.RaisePropertyChanged("ImageWidth");
+                if ((this.ImageWidthPixelsMinField.Equals(value) != true)) {
+                    this.ImageWidthPixelsMinField = value;
+                    this.RaisePropertyChanged("ImageWidthPixelsMin");
                 }
             }
         }
@@ -336,13 +336,16 @@ namespace Pedamorf.Service.Client {
         UNSUPPORTED_SOURCE = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        UNSPECIFIED_ERROR = 3,
+        UNDEFINED_SOURCE = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        TIMEOUT = 4,
+        UNSPECIFIED_ERROR = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        OTHER = 5,
+        TIMEOUT = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OTHER = 6,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
