@@ -58,6 +58,10 @@ of what you can do.  The demo looks like this:
 
 ![Demo](/bradyholt/pedamorf/raw/master/PedamorfDemo/Content/demo-screenshot.png)
 
+Under the Hood
+---
+The pedamorf Service runs as a Windows Service and leverages a TCP binary binding through WCF for service communication.  
+
 Repository Directories
 ---
 
