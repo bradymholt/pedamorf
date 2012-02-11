@@ -50,6 +50,10 @@ Usage Examples
          PedamorfResponse response = client.ConvertText("This is some simple test.");
 
 
+Demo
+---
+![Demo](/bradyholt/pedamorf/raw/master/PedamorfDemo/Content/demo-screenshot.png)
+
 Repository Directories
 ---
 
