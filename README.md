@@ -53,7 +53,7 @@ Usage Examples
 Demo
 ---
 Once the pedamorf Service is installed you can run the /PedamorfDemo web application (in repository) to demonstrate the capabilities
-of pedamorf.
+of pedamorf.  The demo looks like:
 
 ![Demo](/bradyholt/pedamorf/raw/master/PedamorfDemo/Content/demo-screenshot.png)
 
