@@ -65,9 +65,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ConversionHandler.ashx.cs">
-      <DependentUpon>ConversionHandler.ashx</DependentUpon>
-    </Compile>
     <Compile Include="Models\DemoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,9 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Demo\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ConversionHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PedamorfClient\Pedamorf.Service.Client.csproj">
