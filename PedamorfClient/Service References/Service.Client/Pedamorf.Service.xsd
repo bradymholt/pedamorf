@@ -14,6 +14,7 @@
       <xs:enumeration value="ENGINE_ERROR" />
       <xs:enumeration value="COULD_NOT_FETCH_URL" />
       <xs:enumeration value="UNSUPPORTED_SOURCE" />
+      <xs:enumeration value="UNDEFINED_SOURCE" />
       <xs:enumeration value="UNSPECIFIED_ERROR" />
       <xs:enumeration value="TIMEOUT" />
       <xs:enumeration value="OTHER" />

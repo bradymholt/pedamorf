@@ -7,7 +7,7 @@ namespace Pedamorf.Library
 {
     public class ImageConversionOptions : ConversionOptions
     {
-        public int? ImageWidth { get; set; }
-        public int? ImageHeight { get; set; }
+        public int? ImageWidthPixelsMin { get; set; }
+        public int? ImageHeightPixelsMin { get; set; }
     }
 }

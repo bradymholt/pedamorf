@@ -26,16 +26,34 @@ namespace PedamorfDemo.Controllers
                 {
                     if (!string.IsNullOrEmpty(model.UrlButton))
                     {
-                        response = client.ConvertUrl(model.Url, new HtmlConversionOptions() { Orientation = model.Landscape ? PageOrientation.Landscape : PageOrientation.Portrait });
+                        response = client.ConvertUrl(model.Url,
+                            new HtmlConversionOptions() { Orientation = model.Landscape ? PageOrientation.Landscape : PageOrientation.Portrait });
                     }
                     else if (!string.IsNullOrEmpty(model.HtmlButton))
                     {
-                        response = client.ConvertHtml(model.Html, new HtmlConversionOptions() { Orientation = model.Landscape ? PageOrientation.Landscape : PageOrientation.Portrait });
+                        response = client.ConvertHtml(model.Html);
                     }
-                    else if (!string.IsNullOrEmpty(model.FileButton) && model.File1.ContentLength > 0)
+                    else if (!string.IsNullOrEmpty(model.DocumentButton) && model.Document1.ContentLength > 0)
                     {
-                        response = client.ConvertFile(model.File1.InputStream, model.File1.FileName, model.File2.InputStream, model.File2.FileName, new ConversionOptions() { Orientation = model.Landscape ? PageOrientation.Landscape : PageOrientation.Portrait });
+                        response = client.ConvertFiles(model.Document1.InputStream, model.Document1.FileName, model.Document2.InputStream, model.Document2.FileName);
+                    }
+                    else if (!string.IsNullOrEmpty(model.ImageButton) && model.Image.ContentLength > 0)
+                    {
+                        ImageConversionOptions options = new ImageConversionOptions();
 
+                        int imageWidth;
+                        int imageHeight;
+                        if (int.TryParse(model.ImageWidth, out imageWidth))
+                        {
+                            options.ImageWidthPixelsMin = imageWidth;
+                        }
+
+                        if (int.TryParse(model.ImageHeight, out imageHeight))
+                        {
+                            options.ImageHeightPixelsMin = imageHeight;
+                        }
+
+                        response = client.ConvertImage(model.Image.InputStream, model.Image.FileName, options);
                     }
                 }
             }

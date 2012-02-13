@@ -33,8 +33,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:ConversionOptions">
         <xs:sequence>
-          <xs:element minOccurs="0" name="ImageHeight" nillable="true" type="xs:int" />
-          <xs:element minOccurs="0" name="ImageWidth" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ImageHeightPixelsMin" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="ImageWidthPixelsMin" nillable="true" type="xs:int" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

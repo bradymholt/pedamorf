@@ -1,15 +1,16 @@
 ﻿@model Pedamorf.Demo.Models.DemoModel
 <style type="text/css">
-    #demoContainer { width: 100%; }
+    #demoContainer { width: 100%; height: 665px; }
     #demoInput { width: 300px; margin-right: 15px; float: left; }
-    #demoOutput { width: 1075px; }
-    #output { width: 100%; height: 500px; overflow: auto; border: none; }
-    #fsOutput { height: 550px; }
+    #demoOutput { width: 1156px; }
+    #output { width: 100%; height: 590px; overflow: auto; border: none; }
+    #fsOutput { height: 616px; }
     #fsOutput .centered { padding-top: 10px; width: 100%; text-align: center; }
     #pending, #loading, #output { display: none; }
     .demoFieldContainer input[type=text] { width: 250px; }
     .demoFieldContainer input[type=submit] { width: 75px; }
     .demoFieldContainer textarea { width: 250px; }
+    #ImageWidth, #ImageHeight { width: 50px; }
 </style>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -26,38 +27,44 @@
     });
 </script>
 <div id="demoContainer">
-    <div id="demoInput">
+    <div id="demoInput" style="clear: both;">
         <form action="/Demo/Convert" id="formSource" method="post" target="output" enctype="multipart/form-data">
         <fieldset>
-            <legend>Settings</legend>
-            <div>
-                <label for="ServiceHost">
-                    Service Host:</label>
-                <input type="text" id="ServiceHost" name="ServiceHost" value="localhost" /><br />
-                <label for="Landscape">
-                    Landscape:</label><input type="checkbox" id="Landscape" name="Landscape" />
-            </div>
+            <legend>Service Host</legend>
+            <input type="text" id="ServiceHost" name="ServiceHost" value="localhost" />
         </fieldset>
         <fieldset>
-            <legend>Url Demo</legend>
+            <legend>Url</legend>
             <div class="demoFieldContainer">
                 <input type="text" id="Url" name="Url" value="http://www.geekytidbits.com" />
-                <input type="submit" name="UrlButton" value="Convert" />
+                <label for="Landscape">
+                    Landscape:</label><input type="checkbox" id="Landscape" name="Landscape" />
+                <div>
+                    <input type="submit" name="UrlButton" value="Convert" /></div>
             </div>
         </fieldset>
         <fieldset>
-            <legend>Raw Html Demo</legend>
+            <legend>Raw Html</legend>
             <div class="demoFieldContainer">
                 <textarea id="Html" name="Html" rows="2"><h1>My Header</h1><p>This is a test.</p></textarea>
                 <input type="submit" name="HtmlButton" value="Convert" />
             </div>
         </fieldset>
         <fieldset>
-            <legend>File(s) Demo</legend>
+            <legend>Documents</legend>
             <div class="demoFieldContainer">
-                <input type="file" id="File1" name="File1" />
-                <input type="file" id="File2" name="File2" />
-                <input type="submit" name="FileButton" value="Convert" />
+                <input type="file" id="Document1" name="Document1" />
+                <input type="file" id="Document2" name="Document2" />
+                <input type="submit" name="DocumentButton" value="Convert" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Image</legend>
+            <div class="demoFieldContainer">
+                <input type="file" id="Image" name="Image" />
+                Width:<input type="text" id="ImageWidth" name="ImageWidth" value="300" />
+                Height:<input type="text" id="ImageHeight" name="ImageHeight" value="300" />
+                <input type="submit" name="ImageButton" value="Convert" />
             </div>
         </fieldset>
         </form>

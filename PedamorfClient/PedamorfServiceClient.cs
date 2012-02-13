@@ -17,6 +17,7 @@ namespace Pedamorf.Service.Client
         public PedamorfResponse ConvertText(string text) { return ConvertText(text, new ConversionOptions()); }
         public PedamorfResponse ConvertFile(byte[] file, string fileName) { return ConvertFile(file, fileName, new ConversionOptions()); }
         public PedamorfResponse ConvertFiles(Dictionary<string, byte[]> files) { return ConvertFiles(files, new ConversionOptions()); }
+        public PedamorfResponse ConvertFiles(Stream fileStream1, string fileName1, Stream fileStream2, string fileName2) { return ConvertFiles(fileStream1, fileName1, fileStream2, fileName2, , new ConversionOptions());}
         public PedamorfResponse ConvertImage(byte[] image, string fileName) { return ConvertImage(image, fileName, new ImageConversionOptions()); }
         public PedamorfResponse ConvertImages(Dictionary<string, byte[]> images) { return ConvertImages(images, new ImageConversionOptions()); }
         public PedamorfResponse CombinePdfs(List<byte[]> sourcePdfs) { return CombinePdfs(sourcePdfs, new ConversionOptions()); }
@@ -36,14 +37,14 @@ namespace Pedamorf.Service.Client
             return ConvertFile(file, fileName, options);
         }
 
-        public PedamorfResponse ConvertFile(Stream fileSteam1, string fileName1, Stream fileStream2, string fileName2, ConversionOptions options)
+        public PedamorfResponse ConvertFiles(Stream fileStream1, string fileName1, Stream fileStream2, string fileName2, ConversionOptions options)
         {
             Dictionary<string, byte[]> files = new Dictionary<string, byte[]>();
-            byte[] file1 = GetStreamFile(fileSteam1);
-            byte[] file2 = GetStreamFile(fileSteam1);
+            byte[] file1 = GetStreamFile(fileStream1);
+            byte[] file2 = GetStreamFile(fileStream2);
             files.Add(fileName1, file1);
             files.Add(fileName2, file2);
-            return ConvertFiles(files);
+            return ConvertFiles(files, options);
         }
 
         public PedamorfResponse ConvertFiles(string directoryPath) { return ConvertFiles(directoryPath, new ConversionOptions()); }
@@ -65,6 +66,16 @@ namespace Pedamorf.Service.Client
         {
             byte[] file = GetStreamFile(fileSteam);
             return ConvertImage(file, fileName, options);
+        }
+
+        public PedamorfResponse ConvertImages(Stream imageStream1, string imageName1, Stream imageStream2, string imageName2, ImageConversionOptions options)
+        {
+            Dictionary<string, byte[]> files = new Dictionary<string, byte[]>();
+            byte[] file1 = GetStreamFile(imageStream1);
+            byte[] file2 = GetStreamFile(imageStream2);
+            files.Add(imageName1, file1);
+            files.Add(imageName2, file2);
+            return ConvertImages(files, options);
         }
 
         public PedamorfResponse ConvertImages(string directoryPath) { return ConvertImages(directoryPath, new ImageConversionOptions()); }

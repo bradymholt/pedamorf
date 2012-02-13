@@ -1,6 +1,6 @@
 # pedamorf
-A PDF conversion server that supports documents, images, urls, html and text. 
-Author: Brady Holt (http://www.GeekyTidBits.com)  
+A PDF conversion server for Windows that supports documents, images, urls, html and text.  
+Author: Brady Holt (http://www.geekytidbits.com)  
 License: LGPL (GNU LESSER GENERAL PUBLIC LICENSE) 
 
 Overview
@@ -36,7 +36,7 @@ Basic usage:
         
         using Pedamorf.Service.Client;
         ... 
-        using (PedamorfServiceClient client = ServiceManager.GetClient("Server_Name"))
+        using (PedamorfServiceClient client = PedamorfServiceManager.GetClient("Server_Name"))
         {
            PedamorfResponse response = client.ConvertFile("C:\\document.doc");
            File.WriteAllBytes("C:\output.pdf",response.ResultPdf);
@@ -49,6 +49,18 @@ Usage Examples
          PedamorfResponse response = client.ConvertUrl("http://www.google.com");
          PedamorfResponse response = client.ConvertText("This is some simple test.");
 
+
+Demo
+---
+Once the pedamorf Service is installed you can run the /PedamorfDemo web application (in repository) to demonstrate the capabilities
+of pedamorf.  You can only exercise a small subset of the pedamorf functionaity with this demo but it gives a good idea
+of what you can do.  The demo looks like this:
+
+![Demo](/bradyholt/pedamorf/raw/master/PedamorfDemo/Content/demo-screenshot.png)
+
+Under the Hood
+---
+The pedamorf Service is implemented as a Windows Service and leverages a TCP binary binding in WCF for service communication.  
 
 Repository Directories
 ---
