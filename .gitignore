@@ -1,10 +1,2 @@
-bin
-obj
-.user
-*.testsettings
-/pedamorf.vsmdi
-/PedamorfServiceSetup/Release
-/PedamorfServiceSetup/Debug
-/pedamorf.suo
-/PedamorfLibrary/Service References
-/PedamorfDemo/Pedamorf.Demo.csproj.user
+*\bin
+*\obj
