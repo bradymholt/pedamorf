@@ -26,7 +26,7 @@ To install and use pedamorf you need to install the pedamorf Service and then ut
 
 **pedamorf Service** 
 
-1. Download the latest release from the [Downloads](http://pedamorf.s3.amazonaws.com/list.html) page.  
+1. Download the latest release from: https://s3.amazonaws.com/brady.holt/pedamorf_latest.zip
 2. Run the pedamorf Service installer (**PedamorfServiceSetup.msi**).
 
 **pedamorf Client**  
